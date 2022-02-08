@@ -26,6 +26,8 @@
 		83CBF38F27A7F2240009535A /* FileSource.bundle in Embed Plugins */ = {isa = PBXBuildFile; fileRef = 83CBF38E27A7F2240009535A /* FileSource.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83CBF39127A7F22C0009535A /* WavPack.bundle in Embed Plugins */ = {isa = PBXBuildFile; fileRef = 83CBF39027A7F22C0009535A /* WavPack.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83CBF39327A7F2320009535A /* CoreAudio.bundle in Embed Plugins */ = {isa = PBXBuildFile; fileRef = 83CBF39227A7F2320009535A /* CoreAudio.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83EAB95227B24FE800DD96AD /* libsoxr.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 83EAB95127B24FCF00DD96AD /* libsoxr.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		83EAB95A27B2581000DD96AD /* libsoxr.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83EAB95127B24FCF00DD96AD /* libsoxr.0.dylib */; };
 		83F9D5D427A7FF3E00CA43B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F9D5D327A7FF3E00CA43B0 /* Accelerate.framework */; };
 		83F9D5D627A8000B00CA43B0 /* gsx.wv in Resources */ = {isa = PBXBuildFile; fileRef = 83F9D5D527A8000B00CA43B0 /* gsx.wv */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				83EAB95227B24FE800DD96AD /* libsoxr.0.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +120,7 @@
 		83CBF38E27A7F2240009535A /* FileSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FileSource.bundle; path = "../../../Library/Developer/Xcode/DerivedData/HeSuVi_For_Mac-fltnaatlbwmgtvgsvuisehyifsmx/Build/Products/Debug/FileSource.bundle"; sourceTree = "<group>"; };
 		83CBF39027A7F22C0009535A /* WavPack.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WavPack.bundle; path = "../../../Library/Developer/Xcode/DerivedData/HeSuVi_For_Mac-fltnaatlbwmgtvgsvuisehyifsmx/Build/Products/Debug/WavPack.bundle"; sourceTree = "<group>"; };
 		83CBF39227A7F2320009535A /* CoreAudio.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CoreAudio.bundle; path = "../../../Library/Developer/Xcode/DerivedData/HeSuVi_For_Mac-fltnaatlbwmgtvgsvuisehyifsmx/Build/Products/Debug/CoreAudio.bundle"; sourceTree = "<group>"; };
+		83EAB95127B24FCF00DD96AD /* libsoxr.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsoxr.0.dylib; sourceTree = "<group>"; };
 		83F9D5D327A7FF3E00CA43B0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		83F9D5D527A8000B00CA43B0 /* gsx.wv */ = {isa = PBXFileReference; lastKnownFileType = file; name = gsx.wv; path = HeSuVi/gsx.wv; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -128,6 +132,7 @@
 			files = (
 				83B5425227A8C56100B88ED9 /* libHeSuVi.a in Frameworks */,
 				83F9D5D427A7FF3E00CA43B0 /* Accelerate.framework in Frameworks */,
+				83EAB95A27B2581000DD96AD /* libsoxr.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +201,7 @@
 		6B67D44925946BD0008BC03B = {
 			isa = PBXGroup;
 			children = (
+				83EAB95127B24FCF00DD96AD /* libsoxr.0.dylib */,
 				83CBF39227A7F2320009535A /* CoreAudio.bundle */,
 				83CBF39027A7F22C0009535A /* WavPack.bundle */,
 				83CBF38E27A7F2240009535A /* FileSource.bundle */,
@@ -411,6 +417,10 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.losno.HeSuVi-For-Mac.plugin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +445,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.losno.HeSuVi-For-Mac.plugin";
